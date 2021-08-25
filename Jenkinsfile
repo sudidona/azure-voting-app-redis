@@ -11,12 +11,12 @@ pipeline {
       }
       stage('Docker Build'){
         steps{
-          sh 'docker image -a'
+          sh 'docker images -a'
           sh("""
             cd azure-vote/
-            docker image -a
+            docker images -a
             docker build -t jenkins-pipeline .
-            docker image -a
+            docker images -a
             cd ..
           """)
         }
